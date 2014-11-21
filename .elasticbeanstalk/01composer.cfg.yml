@@ -1,0 +1,7 @@
+container_commands:
+  01updatecomposer:
+    command: "composer.phar self-update"
+    leader_only: true
+  02getcomposer:
+    command: "cd /var/app/ondeck/ && composer.phar install --prefer-source"
+    leader_only: true
