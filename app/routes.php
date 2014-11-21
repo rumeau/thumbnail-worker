@@ -12,3 +12,6 @@
 */
 
 Route::post('thumbnail', 'ThumbnailController@store');
+Route::get('/', function() {
+    return 'Thumbnail Generator';
+});
