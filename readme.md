@@ -10,4 +10,4 @@
   3. Establecer el endpoint a http://<ruta>/thumbnail
   4. Corregir permisos de escritura en directorios storage/*
   5. Instalar dependencias con composer
-    1. `composer.phar install
+    1. `composer.phar install`
