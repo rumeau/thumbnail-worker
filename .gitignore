@@ -5,14 +5,4 @@ composer.phar
 .env.php
 .DS_Store
 Thumbs.db
-/.idea
-
-
-# Elastic Beanstalk Files
-
-.elasticbeanstalk/*
-
-!.elasticbeanstalk/*.cfg.yml
-
-!.elasticbeanstalk/*.global.yml
-
+.idea
