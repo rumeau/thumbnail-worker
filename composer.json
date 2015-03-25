@@ -1,6 +1,6 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
+	"name": "rumeau/paperlast-thumbnail-worke",
+	"description": "Gestion de imagenes de paperlast.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"type": "project",
