@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: thumbnail-worker
+global:
+  application_name: thumbnail-worker
+  default_ec2_keyname: Lx001
+  default_platform: PHP 5.5
+  default_region: sa-east-1
+  profile: eb-cli
+  sc: git

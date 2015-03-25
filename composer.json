@@ -9,9 +9,9 @@
 		"aws/aws-sdk-php-laravel": "1.*",
 		"intervention/image": "~2.0"
 	},
-    "require-dev": {
-        "barryvdh/laravel-ide-helper": "~1.11"
-    },
+	"require-dev": {
+		"barryvdh/laravel-ide-helper": "~1.11"
+        },
 	"autoload": {
 		"classmap": [
 			"app/commands",
