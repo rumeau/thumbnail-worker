@@ -146,9 +146,14 @@ return [
 		'App\Providers\RouteServiceProvider',
         //'App\Providers\ViewComposerServiceProvider',
 
+        'Aws\Laravel\AwsServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
+        'App\Providers\FileServiceProvider',
+
 //        'Zizaco\Entrust\EntrustServiceProvider',
 //        'Laracasts\Flash\FlashServiceProvider',
 
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	],
 
 	/*
@@ -196,6 +201,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+        'AWS' => 'Aws\Laravel\AwsFacade',
+        'Image' => 'Intervention\Image\Facades\Image',
 
 //        'Flash' => 'Laracasts\Flash\Flash',
 //        'Entrust' => 'Zizaco\Entrust\EntrustFacade',
