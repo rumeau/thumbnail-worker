@@ -148,7 +148,6 @@ return [
 
         'Aws\Laravel\AwsServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'App\Providers\FileServiceProvider',
 
 //        'Zizaco\Entrust\EntrustServiceProvider',
 //        'Laracasts\Flash\FlashServiceProvider',

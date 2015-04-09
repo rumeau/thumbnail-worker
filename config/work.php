@@ -7,13 +7,21 @@
  */
 
 return [
+    /**
+     * File provider: s3|local
+     */
+    'provider' => 'local',
+
+    /**
+     *
+     */
     'profile' => true,
 
     /**
      * Temp path for downloaded files, it also store
      * the generated thumbnails
      */
-    'tmp_path' => '/tmp',
+    'tmp_path' => 'tmp/',
 
     /**
      *

@@ -4,6 +4,8 @@
 _ide_helper.php
 /resources/assets/vendor
 /.idea
+phpunit.phar
+/tmp
 
 # Elastic Beanstalk Files
 

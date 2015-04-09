@@ -11,9 +11,10 @@
     "laravel/framework": "5.0.*",
     "aws/aws-sdk-php-laravel": "~2.0",
     "intervention/image": "~2.1",
-    "barryvdh/laravel-ide-helper": "~2.0"
+    "league/flysystem-aws-s3-v2": "~1.0"
   },
   "require-dev": {
+    "barryvdh/laravel-ide-helper": "~2.0",
     "phpunit/phpunit": "~4.0",
     "phpspec/phpspec": "~2.1"
   },
