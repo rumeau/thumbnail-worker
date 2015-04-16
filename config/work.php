@@ -10,7 +10,7 @@ return [
     /**
      * File provider: s3|local
      */
-    'provider' => 'local',
+    'provider' => env('WORK_PROVIDER', 'local'),
 
     /**
      *

@@ -12,53 +12,51 @@ class ThumbnailJobCommandHandlerTest extends TestCase
     {
         parent::setUp();
 
-
-        $testDir = storage_path() . '/' . config('work.tmp_path') . 'test';
-        $testOutputDir = storage_path() . '/' . config('work.tmp_path') . 'output';
-        $dummy = base_path() . '/resources/assets/chewie.jpg';
-        if (!is_dir($testDir)) {
-            mkdir($testDir);
-        }
-        if (!is_dir($testOutputDir)) {
-            mkdir($testOutputDir);
-        }
-        if (!file_exists($testDir . 'cheweie.jpg')) {
-            copy($dummy, $testDir . '/chewie.jpg');
+        if (config('work.provider') == 'local') {
+            $testDir = storage_path() . '/' . config('work.tmp_path') . 'test';
+            $dummy = base_path() . '/resources/assets/chewie.jpg';
+            if (!is_dir($testDir)) {
+                mkdir($testDir);
+            }
+            if (!file_exists($testDir . 'cheweie.jpg')) {
+                copy($dummy, $testDir . '/chewie.jpg');
+            }
+        } else {
+            $this->markTestSkipped('Not using the local provider');
         }
     }
 
     public function tearDown()
     {
-        $testDir = storage_path() . '/' . config('work.tmp_path') . 'test';
-        $testOutputDir = storage_path() . '/' . config('work.tmp_path') . 'output';
-        if (file_exists($testDir . '/chewie.jpg')) {
-            unlink($testDir . '/chewie.jpg');
-        }
-        if (is_dir($testDir)) {
-            rmdir($testDir);
-        }
-
-        if (file_exists(storage_path() . '/' . config('work.tmp_path') . 'output/chewie_150x150.png')) {
-            unlink(storage_path() . '/' . config('work.tmp_path') . 'output/chewie_150x150.png');
-        }
-        if (file_exists(storage_path() . '/' . config('work.tmp_path') . 'output/chewie_large.jpg')) {
-            unlink(storage_path() . '/' . config('work.tmp_path') . 'output/chewie_large.jpg');
-        }
-        if (is_dir($testOutputDir)) {
-            rmdir($testOutputDir);
-        }
-
-        $scan = scandir(storage_path() . '/' . config('work.tmp_path'));
-        foreach ($scan as $object) {
-            if ($object == "." || $object == "..") {
-                continue;
+        if (config('work.provider') == 'local') {
+            $testDir = storage_path() . '/' . config('work.tmp_path') . 'test';
+            $testOutputDir = storage_path() . '/' . config('work.tmp_path') . 'output';
+            if (file_exists($testDir . '/chewie.jpg')) {
+                unlink($testDir . '/chewie.jpg');
+            }
+            if (is_dir($testDir)) {
+                rmdir($testDir);
             }
 
-            if (strpos($object, '.tmp')) {
-                unlink(storage_path() . '/' . config('work.tmp_path') . $object);
+            if (file_exists($testOutputDir . '/chewie_150x150.png')) {
+                unlink($testOutputDir . '/chewie_150x150.png');
             }
+            if (file_exists($testOutputDir . '/chewie_large.jpg')) {
+                unlink($testOutputDir . '/chewie_large.jpg');
+            }
+
+            $scan = scandir(storage_path() . '/' . config('work.tmp_path'));
+            foreach ($scan as $object) {
+                if ($object == "." || $object == "..") {
+                    continue;
+                }
+
+                if (strpos($object, '.tmp')) {
+                    unlink(storage_path() . '/' . config('work.tmp_path') . $object);
+                }
+            }
+            reset($scan);
         }
-        reset($scan);
 
         parent::tearDown();
     }
